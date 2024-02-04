@@ -1,0 +1,47 @@
+<html>
+  <head>
+  <style>
+    table{
+      border: 2px solid blue;
+    }
+    th{
+      border: 2px solid red;
+    }
+    td{
+      border: 3px solid brown;
+    }
+  </style> 
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Vote</th>
+      </tr>
+      {% for person in people%}
+      <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{person.name}}</td>
+        <td>{{person.age}}</td>
+        <td>
+          {% if person.age >= 18 %}
+          Vote
+          {%else%}
+          Can't
+          {%endif%}
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+   {% if "Onee" in text%}
+        Hai Bhai
+        {% elif "Two" in text%}
+        Hai two
+        {%else%}
+        Not
+      {% endif%}
+
+  </body>
+</html>
